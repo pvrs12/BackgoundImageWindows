@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-
 namespace BackgroundImage
 {
     public sealed class Wallpaper
@@ -26,7 +25,7 @@ namespace BackgroundImage
 
         public static void Set(Uri uri, Style style)
         {
-            System.IO.Stream s = new System.Net.WebClient().OpenRead(uri.ToString());
+            Stream s = new System.Net.WebClient().OpenRead(uri.ToString());
             
             System.Drawing.Image img = System.Drawing.Image.FromStream(s);
             string tempPath = Path.Combine(Path.GetTempPath(), "wallpaper.jpg");
